@@ -7,7 +7,7 @@
 - GSA ADP Schedule Contract with IBM Corp.
 --><plugin xmlns="http://www.urbancode.com/PluginXMLSchema_v1" xmlns:server="http://www.urbancode.com/PluginServerXMLSchema_v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <header>
-    <identifier id="com.urbancode.air.plugin.JBoss-ON" name="JBoss-ON" version="2"/>
+    <identifier id="com.urbancode.air.plugin.JBoss-ON" name="JBoss-ON" version="3"/>
     <description>
       This plugin automates JBoss ON tasks.
 	</description>
