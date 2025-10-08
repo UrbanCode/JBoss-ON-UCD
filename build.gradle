@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     // groovy-plugin-utils pulls down groovy-all as a transitive dependency for the 'compile' configuration
-    compile 'com.ibm.urbancode.plugins:groovy-plugin-utils:1.0'
+    implementation 'com.ibm.urbancode.plugins:groovy-plugin-utils:1.0'
 }
 
 sourceSets {
@@ -39,7 +39,7 @@ task distPlugin(type: Zip, dependsOn: 'compileGroovy') {
     into('lib') {
         from copyDeps
     }
-    archiveName = "${pluginName}-${releaseVersion}.zip"
+    archiveFileName = "${pluginName}-${releaseVersion}.zip"
 }
 
 task cleanAll(dependsOn: ['clean', 'cleanCopyDeps', 'cleanDistPlugin'])
