@@ -10,10 +10,10 @@
  * GSA ADP Schedule Contract with IBM Corp.
  */
 
-import com.urbancode.air.AirPluginTool
 import com.urbancode.air.plugin.jon.helper.JONCmdHelper
+import com.urbancode.air.plugin.helpers.NewAirPluginTool
 
-def apTool = new AirPluginTool(this.args[0], this.args[1])
+def apTool = new NewAirPluginTool(this.args[0], this.args[1])
 def props = apTool.getStepProperties()
 
 final def isWindows = apTool.isWindows
@@ -22,6 +22,9 @@ def service = props['service']
 def startPath = new File(props['startPath'])
 def start = "rhqctl"
 def startFile = new File(startPath, start)
+
+println ' Data: service: ' + service
+println ' Data: startPath: ' + startPath
 
 if (!startFile.isFile()) {
     throw new Exception("Could not find file in directory ${startFile.absolutePath}")
