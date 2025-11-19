@@ -23,9 +23,6 @@ def startPath = new File(props['startPath'])
 def start = "rhqctl"
 def startFile = new File(startPath, start)
 
-println ' Data: service: ' + service
-println ' Data: startPath: ' + startPath
-
 if (!startFile.isFile()) {
     throw new Exception("Could not find file in directory ${startFile.absolutePath}")
 }
