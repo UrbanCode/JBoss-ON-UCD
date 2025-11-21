@@ -44,7 +44,6 @@ cmdArgs << "${port}"
 def fileList = []
 def workDir = new File(".").canonicalFile
 def scripts = props['scriptFiles']
-println ' Data: scripts: ' + scripts
 
 FileSet fs = new FileSet(workDir)
 def files = scripts.tokenize("\n") as String[]
