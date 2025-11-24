@@ -10,13 +10,13 @@
  * GSA ADP Schedule Contract with IBM Corp.
  */
 
-import com.urbancode.air.AirPluginTool
 import com.urbancode.air.plugin.jon.helper.JONCmdHelper
+import com.urbancode.air.plugin.helpers.NewAirPluginTool
  
-def apTool = new AirPluginTool(this.args[0], this.args[1])
+def apTool = new NewAirPluginTool(this.args[0], this.args[1])
 def props = apTool.getStepProperties()
 
-final def isWindows = apTool.isWindows
+def isWindows = apTool.isWindows
 
 def username = props['username'] != null ? props['username'] : ""
 def password = props['password'] != null ? props['password'] : ""
@@ -25,6 +25,7 @@ def port = props['serverPort']
 def cliPath = new File(props['cliPath'])
 def cli = isWindows ? "rhq-cli.bat" : "rhq-cli.sh"
 def cliFile = new File(cliPath, cli)
+
  
 if (!cliFile.isFile()) {
     throw new Exception("Could not find file in directory: ${cliFile.absolutePath}")

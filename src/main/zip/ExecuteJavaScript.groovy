@@ -10,14 +10,14 @@
  * GSA ADP Schedule Contract with IBM Corp.
  */
 
-import com.urbancode.air.AirPluginTool
 import com.urbancode.air.FileSet
 import com.urbancode.air.plugin.jon.helper.JONCmdHelper
+import com.urbancode.air.plugin.helpers.NewAirPluginTool
 
-def apTool = new AirPluginTool(this.args[0], this.args[1])
+def apTool = new NewAirPluginTool(this.args[0], this.args[1])
 def props = apTool.getStepProperties()
 
-final def isWindows = apTool.isWindows
+def isWindows = apTool.isWindows
 
 def username = props['username'] != null ? props['username'] : ""
 def password = props['password'] != null ? props['password'] : ""
@@ -44,7 +44,7 @@ cmdArgs << "${port}"
 def fileList = []
 def workDir = new File(".").canonicalFile
 def scripts = props['scriptFiles']
-	
+
 FileSet fs = new FileSet(workDir)
 def files = scripts.tokenize("\n") as String[]
 for (file in files) {
